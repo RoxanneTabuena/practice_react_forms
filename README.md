@@ -1,71 +1,37 @@
-# Getting Started with Create React App
+# Saucy Tango Food Order Form
+## This is a practice project from the codecademy front end platform. Much of this code was already set up for me.
+>In this practice project, you will create a food order form for a restaurant.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+>The local mom-and-pop shop, Saucy Tango, has received a lot of love from the community recently. To keep up with demand, they’ve decided to open their restaurant for online orders. They’ve entrusted this task to you, a budding React developer.
 
-## Available Scripts
+>Your goal is to create a functional form that allows customers to place their orders easily. Once the customer submits the form, the form will alert them about their order details. You will be provided with a menu and your task is to create a form that can take in customer details such as name, phone number, address, and order.
 
-In the project directory, you can run:
+>To complete this project, you will use your understanding of controlled React forms. You’ll be using the State Hook to manage the state of the form, and employ event handlers to update the state of the form as the customer fills in their details.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# practice_react_forms
+## I took the following steps to practice controlled forms using state hooks in React:
+### Setting Up the Form
+1.  Open up FoodOrderForm.js. We’ll start laying down the foundation of our form.
+    Inside the FoodOrderForm component’s return statement, add a form element
+2.  Inside the form tags, create an input field each for name, phone, address, and order.
+    For each input, add an id attribute set to the information it is responsible for, such as "name", "phone", "address", and "order".
+3.  Attach a label element to each input element.
+4.  Great, the foundation is taking shape!
+    Let’s now add a button at the bottom of our form. You can set the text of the button to "Submit Order" and include a type attribute with a value of "submit". This will let the browser know that this button is intended to submit the form.
+### Controlling the Form
+5.  Inside the FoodOrderForm component and above the return statement, use the State Hook to define a state variable for each piece of information, 
+    along with their state setters.
+    Initialize all state variables to an empty string.
+6.  For each input element, add a value attribute and set the value to the corresponding state variable.
+7.  Update each input element by giving it an onChange event handler.
+8.  Give each input element an onChange event handler and pass in a callback function that updates the corresponding state variable of each input
+    based on the values of e.target.value
+### Form Submission
+9.  Inside the FoodOrderForm component, define a handleSubmit() function to manage the submitted form data. 
+    The function should receive an event object, e, in its parameter.
+    In the function body, prevent the form from taking its default action with e.preventDefault(). Rather than using the default action, we want to have it alert the user instead.
+10. While still in the function body of handleSubmit(), alert the user using the JavaScript function alert().
+    The alert should output the user’s order data in this format.
+    Order Successful!
+    Your order was user's orders.
+    Please show your confirmation number for pickup.
+11. Pass the handleSubmit() function to the form by giving the form tag an onSubmit event listener with the value handleSubmit.

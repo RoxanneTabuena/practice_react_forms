@@ -35,3 +35,11 @@
     Your order was user's orders.
     Please show your confirmation number for pickup.
 11. Pass the handleSubmit() function to the form by giving the form tag an onSubmit event listener with the value handleSubmit.
+## My personal Addition
+### Set Up Order Confirmation Functionality
+>I did notice that the codecademy version prompted you to give a confirmation number upon pickup but did not provide you with a confirmation. I fixed this by adding a confirmation generator function and storing the current order id in a utility compnent. It only took a few minutes, and in my opinion, greatly improves the user experience and brings a nice sense of humor to the project.
+1.  create utility file
+2.  import utility to FoodOrderForm
+3.  create current order variable
+4.  create a function that concatinates the current order with a special code to confirm a purchase
+5.  call the function upon food order submit to deliver confirmation code to the cutsomer<3
